@@ -1,0 +1,91 @@
+@charset "UTF-8";
+.custom-select {
+  /*the container must be positioned relative:*/
+  position: relative;
+  font-family: Arial;
+  height: 42px;
+}
+.custom-select select {
+  display: none;
+  /*hide original SELECT element:*/
+}
+.custom-select .select-selected {
+  height: 24px;
+  /*style the items (options), including the selected item:*/
+  background-color: #fbfbfb;
+  color: #000;
+  padding: 8px 17px 8px 5px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.6) transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.custom-select .select-selected:after {
+  /*style the arrow inside the select element:*/
+  position: absolute;
+  content: "▼";
+  padding: 1px;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.custom-select .select-arrow-active:after {
+  /*point the arrow upwards when the select box is open (active):*/
+  content: "▲" !important;
+}
+.custom-select .select-items {
+  /*style items (options):*/
+  position: absolute;
+  background-color: #fbfbfb;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  max-height: 200px;
+  overflow-y: scroll;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.custom-select .select-items::-webkit-scrollbar {
+  width: 3px;
+}
+.custom-select .select-items::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.custom-select .select-items::-webkit-scrollbar-thumb {
+  background: #888;
+}
+.custom-select .select-items::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.custom-select .select-items div {
+  /*style the items (options), including the selected item:*/
+  color: #000;
+  padding: 8px 16px 8px 5px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.custom-select .select-items div:hover, .custom-select .select-items .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.custom-select .select-hide {
+  /*hide the items when the select box is closed:*/
+  display: none;
+}/*# sourceMappingURL=custom_select.css.map */
